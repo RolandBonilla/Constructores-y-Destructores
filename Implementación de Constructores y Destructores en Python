@@ -1,0 +1,34 @@
+class Libro:
+    """
+    Clase que representa un libro.
+    
+    Los constructores (__init__) se utilizan para inicializar los atributos del objeto cuando se crea una nueva instancia.
+    Los destructores (__del__) se utilizan para realizar tareas de limpieza o cierre de recursos cuando un objeto es eliminado.
+    """
+    
+    def __init__(self, titulo, autor, paginas):
+        """
+        Constructor de la clase Libro.
+        
+        Inicializa los atributos del libro: título, autor y número de páginas.
+        """
+        self.titulo = titulo
+        self.autor = autor
+        self.paginas = paginas
+        print(f"Se ha creado un nuevo libro: '{self.titulo}' de {self.autor} con {self.paginas} páginas.")
+    
+    def __del__(self):
+        """
+        Destructor de la clase Libro.
+        
+        Imprime un mensaje cuando un objeto de la clase Libro es eliminado.
+        """
+        print(f"El libro '{self.titulo}' de {self.autor} ha sido eliminado.")
+
+# Crear nuevos libros
+libro1 = Libro("Cien años de soledad", "Gabriel García Márquez", 471)
+libro2 = Libro("El Quijote", "Miguel de Cervantes", 1056)
+
+# Eliminar los libros (activará los destructores)
+del libro1
+del libro2
